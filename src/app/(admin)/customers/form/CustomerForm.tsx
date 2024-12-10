@@ -12,7 +12,7 @@ import { CheckboxWithLabel } from "@/components/inputs/CheckboxWithLabel"
 
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs"
 
-import { StatesArray } from "@/constants/StatesArray"
+import { CountiesArray } from "@/constants/CountiesArray"
 
 import { insertCustomerSchema, type insertCustomerSchemaType, type selectCustomerSchemaType } from "@/zod-schemas/customer"
 
@@ -39,8 +39,8 @@ export default function CustomerForm({ customer }: Props) {
         address1: customer?.address1 ?? '',
         address2: customer?.address2 ?? '',
         city: customer?.city ?? '',
-        state: customer?.state ?? '',
-        zip: customer?.zip ?? '',
+        county: customer?.county ?? '',
+        postCode: customer?.postCode ?? '',
         phone: customer?.phone ?? '',
         email: customer?.email ?? '',
         notes: customer?.notes ?? '',
@@ -122,9 +122,9 @@ export default function CustomerForm({ customer }: Props) {
                         />
 
                         <SelectWithLabel<insertCustomerSchemaType>
-                            fieldTitle="State"
-                            nameInSchema="state"
-                            data={StatesArray}
+                            fieldTitle="County"
+                            nameInSchema="county"
+                            data={CountiesArray}
                         />
 
                     </div>
@@ -132,8 +132,8 @@ export default function CustomerForm({ customer }: Props) {
                     <div className="flex flex-col gap-4 w-full max-w-xs">
 
                         <InputWithLabel<insertCustomerSchemaType>
-                            fieldTitle="Zip Code"
-                            nameInSchema="zip"
+                            fieldTitle="Post Code"
+                            nameInSchema="postCode"
                         />
 
                         <InputWithLabel<insertCustomerSchemaType>

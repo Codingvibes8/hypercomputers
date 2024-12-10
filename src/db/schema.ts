@@ -1,6 +1,7 @@
 import { pgTable, serial, varchar, boolean, timestamp, integer, text } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
 
+
 export const customers = pgTable("customers", {
     id: serial("id").primaryKey(),
     firstName: varchar("first_name").notNull(),
@@ -10,8 +11,8 @@ export const customers = pgTable("customers", {
     address1: varchar("address1").notNull(),
     address2: varchar("address2"),
     city: varchar("city").notNull(),
-    state: varchar("state", { length: 2 }).notNull(),
-    zip: varchar("zip", { length: 10 }).notNull(),
+    county: varchar("county", { length: 20 }).notNull(),
+    postCode: varchar("post_code", { length: 10 }).notNull(),
     notes: text("notes"),
     active: boolean("active").notNull().default(true),
     createdAt: timestamp("created_at").notNull().defaultNow(),
@@ -29,7 +30,7 @@ export const tickets = pgTable("tickets", {
     updatedAt: timestamp("updated_at").notNull().defaultNow().$onUpdate(() => new Date()),
 })
 
-// Create relations 
+//Create relations btw tables
 export const customersRelations = relations(customers,
     ({ many }) => ({
         tickets: many(tickets),
