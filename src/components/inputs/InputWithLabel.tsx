@@ -19,8 +19,8 @@ type Props<S> = {
 } & InputHTMLAttributes<HTMLInputElement>
 
 export function InputWithLabel<S>({
-    fieldTitle, nameInSchema, className, ...props
-}: Props<S>) {
+                                      fieldTitle, nameInSchema, className, ...props
+                                  }: Props<S>) {
     const form = useFormContext()
 
     return (

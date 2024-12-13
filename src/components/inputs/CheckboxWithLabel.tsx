@@ -20,8 +20,8 @@ type Props<S> = {
 }
 
 export function CheckboxWithLabel<S>({
-    fieldTitle, nameInSchema, message, disabled = false
-}: Props<S>) {
+                                         fieldTitle, nameInSchema, message, disabled = false
+                                     }: Props<S>) {
     const form = useFormContext()
 
     return (

@@ -20,8 +20,8 @@ type Props<S> = {
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
 export function TextAreaWithLabel<S>({
-    fieldTitle, nameInSchema, className, ...props
-}: Props<S>) {
+                                         fieldTitle, nameInSchema, className, ...props
+                                     }: Props<S>) {
     const form = useFormContext()
 
     return (

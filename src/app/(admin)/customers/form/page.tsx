@@ -3,6 +3,9 @@ import { BackButton } from "@/components/BackButton";
 import * as Sentry from "@sentry/nextjs"
 import CustomerForm from "@/app/(admin)/customers/form/CustomerForm";
 
+
+
+
 export async function generateMetadata({
     searchParams,
 }: {
@@ -14,6 +17,10 @@ export async function generateMetadata({
 
     return { title: `Edit Customer #${customerId}` }
 }
+
+
+
+
 
 export default async function CustomerFormPage({
     searchParams,
