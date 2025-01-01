@@ -77,7 +77,7 @@ export default async function TicketFormPage({
 
             // return ticket form 
             if (isManager) {
-                kindeInit() // Initializes the Kinde Management API 
+                kindeInit()
                 const { users } = await Users.getUsers()
 
                 const techs = users ? users.map(user => ({ id: user.email!, description: user.email! })) : []

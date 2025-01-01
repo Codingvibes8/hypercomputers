@@ -1,13 +1,14 @@
 import CustomerSearch from "@/app/(admin)/customers/CustomerSearch"
 import { getCustomerSearchResults } from "@/lib/queries/getCustomerSearchResults"
+import CustomerTable from "@/app/(admin)/customers/CustomerTable"
 
 export const metadata = {
     title: "Customer Search",
 }
 
 export default async function Customers({
-    searchParams,
-}: {
+                                            searchParams,
+                                        }: {
     searchParams: Promise<{ [key: string]: string | undefined }>
 }) {
     const { searchText } = await searchParams
@@ -19,7 +20,9 @@ export default async function Customers({
     return (
         <>
             <CustomerSearch />
-            <p>{JSON.stringify(results)}</p>
+            {results.length ? <CustomerTable data={results} /> : (
+                <p className="mt-4">No results found</p>
+            )}
         </>
     )
 }

@@ -10,7 +10,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'home-img': "url('/images/home-img.jpg')",
+				'home-img': "url('/images/peacock1.jpeg')",
 			},
 			colors: {
 				background: 'hsl(var(--background))',

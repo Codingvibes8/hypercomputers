@@ -13,8 +13,8 @@ export async function getCustomerSearchResults(searchText: string) {
             ilike(customers.address1, `%${searchText}%`),
             ilike(customers.address2, `%${searchText}%`),
             ilike(customers.city, `%${searchText}%`),
-            ilike(customers.state, `%${searchText}%`),
-            ilike(customers.zip, `%${searchText}%`),
+            ilike(customers.county, `%${searchText}%`),
+            ilike(customers.postCode, `%${searchText}%`),
             ilike(customers.notes, `%${searchText}%`),
         ))
     return results

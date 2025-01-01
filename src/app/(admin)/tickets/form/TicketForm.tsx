@@ -135,7 +135,7 @@ export default function TicketForm({
                             <p>{customer.firstName} {customer.lastName}</p>
                             <p>{customer.address1}</p>
                             {customer.address2 ? <p>{customer.address2}</p> : null}
-                            <p>{customer.city}, {customer.state} {customer.zip}</p>
+                            <p>{customer.city}, {customer.county} {customer.postCode}</p>
                             <hr className="w-4/5" />
                             <p>{customer.email}</p>
                             <p>Phone: {customer.phone}</p>
@@ -152,7 +152,7 @@ export default function TicketForm({
                             disabled={!isEditable}
                         />
 
-                        {isEditable ? (
+                       
                             <div className="flex gap-2">
                                 <Button
                                     type="submit"
@@ -180,7 +180,7 @@ export default function TicketForm({
                                     Reset
                                 </Button>
                             </div>
-                        ) : null}
+
 
                     </div>
 
